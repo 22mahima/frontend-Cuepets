@@ -1,120 +1,24 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Home Page Background */
-  .container-fluid {
-    background-color: #d19142; /* Matching the navbar orange shade */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Heading Styles */
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color:#008080;
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #008080; /* Teal color for the heading */
+  text-align: center;
+  position: relative; /* Changed to relative for better placement within the bottom section */
+  z-index: 2;
+  opacity: 1;
+  animation: fadeInUp 1s forwards;
+  width: 100%;
+  margin-bottom: 2rem; /* Margin between the heading and the following content */
+}
+
+/* FadeIn animation */
+@keyframes fadeInUp {
+  from {
     opacity: 0;
-    transform: translateY(-30px);
-    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(20px); /* Initial position slightly lower */
   }
-  
-  /* Fade In Effect for Heading */
-  .container-fluid h1 {
-    animation: fadeInUp 1s forwards;
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
   }
-  
-  /* Paragraph Styles */
-  p {
-    font-size: 1.2rem;
-    color: white;
-    opacity: 0;
-    transform: translateY(-30px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-  
-  /* Fade In Effect for Paragraph */
-  .container-fluid p {
-    animation: fadeInUp 1.5s forwards;
-  }
-  
-  /* Button Styles */
-  .btn {
-    font-size: 1.1rem;
-    padding: 0.8rem 2rem;
-    border-radius: 25px;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  /* Get Started Button */
-  .btn-light {
-    background-color: white;
-    color: #ff8c00;
-    border: 2px solid #ff8c00;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .btn-light:hover {
-    background-color: #ff8c00;
-    color: white;
-    transform: translateY(-5px); /* Elevates the button slightly on hover */
-  }
-  
-  /* Learn More Button */
-  .btn-outline-light {
-    border: 2px solid white;
-    color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .btn-outline-light:hover {
-    background-color: white;
-    color: #ff8c00;
-    transform: translateY(-5px); /* Elevates the button slightly on hover */
-  }
-  
-  /* Row and Column Layout */
-  .row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .col-md-8 {
-    text-align: center;
-  }
-  
-  /* Fade-In Animation */
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Mobile-Friendly Adjustments */
-  @media (max-width: 767px) {
-    .container-fluid {
-      padding: 20px;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  
-    p {
-      font-size: 1rem;
-    }
-  
-    .btn {
-      font-size: 1rem;
-    }
-  }
-  
+}
