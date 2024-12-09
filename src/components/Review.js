@@ -1,5 +1,5 @@
 import React from "react";
-import './Review.css';
+import '../css files/Review.css';
 import Edmund from '../images/Edmund.jpeg';
 import Lucy from '../images/Lucy.jpg';
 import Peter from '../images/peter.jpeg';

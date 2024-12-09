@@ -1,0 +1,79 @@
+.cat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* Light background for contrast */
+  }
+  
+  .cat {
+    position: relative;
+    width: 80px;
+    height: 120px;
+    background-color: black;
+    border-radius: 40px 40px 30px 30px; /* Rounded body shape */
+  }
+  
+  /* Head */
+  .head {
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+  }
+  
+  /* Ears */
+  .ear {
+    position: absolute;
+    top: -20px;
+    width: 20px;
+    height: 30px;
+    background-color: black;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
+  }
+  
+  .ear-left {
+    left: 0;
+  }
+  
+  .ear-right {
+    right: 0;
+  }
+  
+  /* Body */
+  .body {
+    position: absolute;
+    top: 40px;
+    width: 80px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+  }
+  
+  /* Paw */
+  .paw {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 20px;
+    height: 40px;
+    background-color: black;
+    border-radius: 20px;
+    transform: rotate(-30deg); /* Angle to simulate paw position */
+  }
+  
+  /* Tail */
+  .tail {
+    position: absolute;
+    bottom: 10px;
+    right: -20px;
+    width: 20px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50px;
+    transform: rotate(20deg); /* Tail curve */
+  }
+  

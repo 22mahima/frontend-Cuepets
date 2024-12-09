@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import './Home.css' // Correct path to your home.css
+import '../css files/Home.css' // Correct path to your home.css
 
 import first from "../images/first.jpg"; // Correctly importing the image
 
+
 const Home = () => {
   return (
+    <>
     <div className="container-fluid" style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
       {/* Upper Section with Background Image */}
       <div 
@@ -46,7 +48,10 @@ const Home = () => {
           <button className="btn btn-outline-light">Learn More</button>
         </div>
       </div>
+      
     </div>
+    
+    </>
   );
 };
 

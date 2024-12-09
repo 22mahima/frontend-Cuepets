@@ -1,5 +1,5 @@
 import React from 'react';
-import './H3.css'; // Import the updated CSS file
+import '../css files/H3.css'; // Import the updated CSS file
 
 function H3() {
   return (

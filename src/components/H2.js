@@ -1,5 +1,5 @@
 import React from "react";
-import './H2.css';
+import '../css files/H2.css';
 import hm from '../images/hm.jpg';
 
 const H2 = () => {

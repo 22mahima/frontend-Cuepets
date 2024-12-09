@@ -1,8 +1,49 @@
 import React, { useState } from "react";
-import "./Sign.css";
+import { useNavigate } from "react-router-dom";
+import "../css files/Sign.css";
 
 const SignUpSignIn = () => {
   const [isSignUp, setIsSignUp] = useState(true);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Basic Validation
+    if (isSignUp) {
+      if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
+        alert("Please fill out all the fields!");
+        return;
+      }
+      if (formData.password !== formData.confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+    } else {
+      if (!formData.email || !formData.password) {
+        alert("Please fill out all the fields!");
+        return;
+      }
+    }
+
+    // Redirect to Congratulations Page
+
+    
+    navigate("/Cong");
+  };
 
   return (
     <div className="auth-container">
@@ -16,28 +57,56 @@ const SignUpSignIn = () => {
           </p>
         </div>
 
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={handleSubmit}>
           {isSignUp && (
             <div className="form-group">
               <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" placeholder="Enter your full name" required />
+              <input
+                type="text"
+                id="name"
+                placeholder="Enter your full name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+              />
             </div>
           )}
 
           <div className="form-group">
             <label htmlFor="email">Email Address</label>
-            <input type="email" id="email" placeholder="Enter your email" required />
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
           </div>
 
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" placeholder="Enter your password" required />
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={handleInputChange}
+              required
+            />
           </div>
 
           {isSignUp && (
             <div className="form-group">
               <label htmlFor="confirm-password">Confirm Password</label>
-              <input type="password" id="confirm-password" placeholder="Confirm your password" required />
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm your password"
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
+                required
+              />
             </div>
           )}
 
